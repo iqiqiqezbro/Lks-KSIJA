@@ -1,3 +1,10 @@
+print("猫帝帮你开启了反挂机")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 -- 创建主窗口
@@ -14,6 +21,7 @@ local Window = Rayfield:CreateWindow({
 local Tab1 = Window:CreateTab("关于")
 local Tab2 = Window:CreateTab("通用")
 local Tab3 = Window:CreateTab("ohio")
+local Tab4 = Window:CreateTab("娱乐")
 
 -- 1. 切换开关(Toggle)示例
 local ToggleExample = Tab1:CreateToggle({
@@ -37,6 +45,16 @@ local SliderExample = Tab2:CreateSlider({
     end,
 })
 
+
+local ButtonExample = Tab2:CreateButton({
+    Name = "speedjumpgravity",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/-V1/main/%E9%80%9F%E5%BA%A6%E7%AD%89%E7%AD%89%EF%BC%8C%E4%BB%85%E7%94%B5%E8%84%91%E5%8F%AF%E7%94%A8"))()
+    end,
+})
+
+
 -- 6. 按钮(Button)示例
 local ButtonExample = Tab2:CreateButton({
     Name = "动作",
@@ -51,7 +69,7 @@ local ButtonExample = Tab2:CreateButton({
     Name = "fly",
     Callback = function()
         print("按钮被点击了!")
-        loadstring(game:HttpGet('https://pastebin.com/raw/U27yQRxS'))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/sedfksijfmlhymaodi/8e35b0bdd6f1c4c90c9657699f565dcd96dff272/%E7%8C%AB%E5%B8%9DFLY"))()
     end,
 })
 
@@ -97,5 +115,14 @@ local ButtonExample = Tab3:CreateButton({
     Callback = function()
         print("按钮被点击了!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/refs/heads/main/Games/俄亥俄州.lua"))()
+    end,
+})
+
+
+local ButtonExample = Tab4:CreateButton({
+    Name = "奔跑脚本",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/-V1/bead67d6cc08b0230fda9c6daf64f3f2ad7ac640/%E8%B7%91%E6%AD%A5%E8%84%9A%E6%9C%AC"))()
     end,
 })
