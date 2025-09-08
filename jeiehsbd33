@@ -1,21 +1,21 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/Lks-KSIJA/main/maosp631iqn", true))()
--- 尊贵的猫帝脚本用户标识
+-- 你看你妈呢
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 
--- 获取本地玩家
+-- 你看你妈呢
 local localPlayer = Players.LocalPlayer
 local playerGui = localPlayer:WaitForChild("PlayerGui")
 
--- 创建主屏幕 GUI
+-- 你看你妈呢
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "VIPUserDisplay"
 screenGui.Parent = playerGui
 screenGui.ResetOnSpawn = false
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
--- 创建尊贵用户标识
+-- 你看你妈呢
 local vipFrame = Instance.new("Frame")
 vipFrame.Name = "VIPFrame"
 vipFrame.Size = UDim2.new(0, 250, 0, 50)
@@ -25,18 +25,18 @@ vipFrame.BackgroundTransparency = 0.3
 vipFrame.BorderSizePixel = 0
 vipFrame.Parent = screenGui
 
--- 添加圆角
+-- 你看你妈呢
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0, 12)
 corner.Parent = vipFrame
 
--- 添加金色边框
+-- 你看你妈呢
 local uiStroke = Instance.new("UIStroke")
 uiStroke.Color = Color3.fromRGB(255, 215, 0)
 uiStroke.Thickness = 2
 uiStroke.Parent = vipFrame
 
--- 创建猫图标
+-- 你看你妈呢
 local catIcon = Instance.new("ImageLabel")
 catIcon.Name = "CatIcon"
 catIcon.Size = UDim2.new(0, 40, 0, 40)
@@ -45,7 +45,7 @@ catIcon.BackgroundTransparency = 1
 catIcon.Image = "rbxassetid://7733960981" -- 可以使用一个猫图标
 catIcon.Parent = vipFrame
 
--- 创建尊贵用户文本
+-- 你看你妈呢
 local vipText = Instance.new("TextLabel")
 vipText.Name = "VIPText"
 vipText.Size = UDim2.new(0, 190, 0, 40)
@@ -60,7 +60,7 @@ vipText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 vipText.TextStrokeTransparency = 0.3
 vipText.Parent = vipFrame
 
--- 添加闪烁动画
+-- 你看你妈呢
 local function startBlinkAnimation()
     while true do
         local tween1 = TweenService:Create(
@@ -99,10 +99,10 @@ local function startBlinkAnimation()
     end
 end
 
--- 启动动画
+-- 再看我直接把你妈操回来
 coroutine.wrap(startBlinkAnimation)()
 
--- 添加鼠标悬停效果
+-- 你看你妈呢
 vipFrame.MouseEnter:Connect(function()
     TweenService:Create(
         vipFrame,
@@ -131,7 +131,7 @@ vipFrame.MouseLeave:Connect(function()
     ):Play()
 end)
 
--- 点击显示信息
+-- 你看你妈呢
 vipFrame.MouseButton1Click:Connect(function()
     game.StarterGui:SetCore("SendNotification", {
         Title = "猫帝脚本",
@@ -141,7 +141,7 @@ vipFrame.MouseButton1Click:Connect(function()
     })
 end)
 
--- 添加拖拽功能
+-- 你看你妈呢
 local dragging = false
 local dragInput, dragStart, startPos
 
@@ -172,7 +172,7 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- 添加自动隐藏功能（可选）
+-- 再看我直接把你妈塞到月球上
 local hidden = false
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if gameProcessed then return end
@@ -197,7 +197,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     end
 end)
 
--- 添加版本信息
+-- 我把你妈操死
 local versionText = Instance.new("TextLabel")
 versionText.Name = "VersionText"
 versionText.Size = UDim2.new(1, -10, 0, 15)
