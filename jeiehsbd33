@@ -1,1 +1,213 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/Lks-KSIJA/main/maosp631iqn", true))()
+-- 尊贵的猫帝脚本用户标识
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+
+-- 获取本地玩家
+local localPlayer = Players.LocalPlayer
+local playerGui = localPlayer:WaitForChild("PlayerGui")
+
+-- 创建主屏幕 GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "VIPUserDisplay"
+screenGui.Parent = playerGui
+screenGui.ResetOnSpawn = false
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- 创建尊贵用户标识
+local vipFrame = Instance.new("Frame")
+vipFrame.Name = "VIPFrame"
+vipFrame.Size = UDim2.new(0, 250, 0, 50)
+vipFrame.Position = UDim2.new(1, -260, 0, 10) -- 右上角
+vipFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+vipFrame.BackgroundTransparency = 0.3
+vipFrame.BorderSizePixel = 0
+vipFrame.Parent = screenGui
+
+-- 添加圆角
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = vipFrame
+
+-- 添加金色边框
+local uiStroke = Instance.new("UIStroke")
+uiStroke.Color = Color3.fromRGB(255, 215, 0)
+uiStroke.Thickness = 2
+uiStroke.Parent = vipFrame
+
+-- 创建猫图标
+local catIcon = Instance.new("ImageLabel")
+catIcon.Name = "CatIcon"
+catIcon.Size = UDim2.new(0, 40, 0, 40)
+catIcon.Position = UDim2.new(0, 5, 0.5, -20)
+catIcon.BackgroundTransparency = 1
+catIcon.Image = "rbxassetid://7733960981" -- 可以使用一个猫图标
+catIcon.Parent = vipFrame
+
+-- 创建尊贵用户文本
+local vipText = Instance.new("TextLabel")
+vipText.Name = "VIPText"
+vipText.Size = UDim2.new(0, 190, 0, 40)
+vipText.Position = UDim2.new(0, 50, 0.5, -20)
+vipText.BackgroundTransparency = 1
+vipText.Text = "尊贵的猫帝脚本用户"
+vipText.TextColor3 = Color3.fromRGB(255, 215, 0)
+vipText.Font = Enum.Font.GothamBold
+vipText.TextSize = 16
+vipText.TextXAlignment = Enum.TextXAlignment.Left
+vipText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+vipText.TextStrokeTransparency = 0.3
+vipText.Parent = vipFrame
+
+-- 添加闪烁动画
+local function startBlinkAnimation()
+    while true do
+        local tween1 = TweenService:Create(
+            uiStroke,
+            TweenInfo.new(0.8, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+            {Color = Color3.fromRGB(255, 165, 0)}
+        )
+        
+        local tween2 = TweenService:Create(
+            vipText,
+            TweenInfo.new(0.8, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 165, 0)}
+        )
+        
+        tween1:Play()
+        tween2:Play()
+        
+        wait(0.8)
+        
+        local tween3 = TweenService:Create(
+            uiStroke,
+            TweenInfo.new(0.8, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+            {Color = Color3.fromRGB(255, 215, 0)}
+        )
+        
+        local tween4 = TweenService:Create(
+            vipText,
+            TweenInfo.new(0.8, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+            {TextColor3 = Color3.fromRGB(255, 215, 0)}
+        )
+        
+        tween3:Play()
+        tween4:Play()
+        
+        wait(0.8)
+    end
+end
+
+-- 启动动画
+coroutine.wrap(startBlinkAnimation)()
+
+-- 添加鼠标悬停效果
+vipFrame.MouseEnter:Connect(function()
+    TweenService:Create(
+        vipFrame,
+        TweenInfo.new(0.3),
+        {BackgroundTransparency = 0.1}
+    ):Play()
+    
+    TweenService:Create(
+        uiStroke,
+        TweenInfo.new(0.3),
+        {Thickness = 3}
+    ):Play()
+end)
+
+vipFrame.MouseLeave:Connect(function()
+    TweenService:Create(
+        vipFrame,
+        TweenInfo.new(0.3),
+        {BackgroundTransparency = 0.3}
+    ):Play()
+    
+    TweenService:Create(
+        uiStroke,
+        TweenInfo.new(0.3),
+        {Thickness = 2}
+    ):Play()
+end)
+
+-- 点击显示信息
+vipFrame.MouseButton1Click:Connect(function()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "猫帝脚本",
+        Text = "感谢您使用尊贵的猫帝脚本服务！",
+        Duration = 5,
+        Icon = "rbxassetid://7733960981"
+    })
+end)
+
+-- 添加拖拽功能
+local dragging = false
+local dragInput, dragStart, startPos
+
+vipFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = vipFrame.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+vipFrame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        vipFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+-- 添加自动隐藏功能（可选）
+local hidden = false
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    
+    if input.KeyCode == Enum.KeyCode.H then
+        hidden = not hidden
+        vipFrame.Visible = not hidden
+        
+        if hidden then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "猫帝脚本",
+                Text = "用户标识已隐藏，按H键显示",
+                Duration = 3
+            })
+        else
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "猫帝脚本",
+                Text = "用户标识已显示，按H键隐藏",
+                Duration = 3
+            })
+        end
+    end
+end)
+
+-- 添加版本信息
+local versionText = Instance.new("TextLabel")
+versionText.Name = "VersionText"
+versionText.Size = UDim2.new(1, -10, 0, 15)
+versionText.Position = UDim2.new(0, 5, 1, -20)
+versionText.BackgroundTransparency = 1
+versionText.Text = "v2.0.1 猫帝专属"
+versionText.TextColor3 = Color3.fromRGB(200, 200, 200)
+versionText.Font = Enum.Font.Gotham
+versionText.TextSize = 10
+versionText.TextXAlignment = Enum.TextXAlignment.Right
+versionText.Parent = vipFrame
+
+print("尊贵的猫帝脚本用户标识已加载！")
