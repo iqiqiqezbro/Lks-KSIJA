@@ -24,6 +24,7 @@ local Tab3 = Window:CreateTab("ohio")
 local Tab4 = Window:CreateTab("娱乐")
 local Tab5 = Window:CreateTab("doors")
 local Tab6 = Window:CreateTab("墨水游戏")
+local Tab7 = Window:CreateTab("范围")
 
 -- 1. 切换开关(Toggle)示例
 local ToggleExample = Tab1:CreateToggle({
@@ -53,7 +54,7 @@ local SliderExample = Tab2:CreateSlider({
     Name = "jump",
     Range = {0, 1000},
     Increment = 1,
-    CurrentValue = 16,
+    CurrentValue = 50,
     Flag = "SliderExample",
     Callback = function(Value)
         print("滑块值:", Value)
@@ -212,6 +213,15 @@ local ButtonExample = Tab2:CreateButton({
 
 
 local ButtonExample = Tab2:CreateButton({
+    Name = "无限跳",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+    end,
+})
+
+
+local ButtonExample = Tab2:CreateButton({
     Name = "Fill",
     Callback = function()
         print("按钮被点击了!")
@@ -250,17 +260,6 @@ local ToggleExample = Tab2:CreateToggle({
 })
 
 
-local TextBoxExample = Tab2:CreateInput({
-    Name = "输入框示例",
-    PlaceholderText = "输入一些文字...",
-    RemoveTextAfterFocusLost = false,
-    Callback = function(Text)
-        print("输入的文本:", Text)
-        
-    end,
-})
-
-
 local ButtonExample = Tab3:CreateButton({
     Name = "xa俄亥俄州",
     Callback = function()
@@ -270,8 +269,17 @@ local ButtonExample = Tab3:CreateButton({
 })
 
 
+local ButtonExample = Tab7:CreateButton({
+    Name = "神清",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gycgchgyfytdttr/shenqin/refs/heads/main/ohio.txt"))()
+    end,
+})
+
+
 local ButtonExample = Tab3:CreateButton({
-    Name = "fly",
+    Name = "汉化中文",
     Callback = function()
         print("按钮被点击了!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/rbxluau/Roblox/main/ScriptHub.lua"))()
@@ -329,5 +337,32 @@ local ButtonExample = Tab6:CreateButton({
     Callback = function()
         print("按钮被点击了!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ScripterVaz/InkGameAzure/main/Protected_7974105512464815.lua.txt"))()
+    end,
+})
+
+
+local ButtonExample = Tab7:CreateButton({
+    Name = "低级",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://pastebin.com/raw/jiNwDbCN"))()
+    end,
+})
+
+
+local ButtonExample = Tab7:CreateButton({
+    Name = "中级",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://pastebin.com/raw/x13bwrFb"))()
+    end,
+})
+
+
+local ButtonExample = Tab7:CreateButton({
+    Name = "高级",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://pastebin.com/raw/KKY9EpZU"))()
     end,
 })
