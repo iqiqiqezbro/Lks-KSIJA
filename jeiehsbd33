@@ -42,7 +42,7 @@ catIcon.Name = "CatIcon"
 catIcon.Size = UDim2.new(0, 40, 0, 40)
 catIcon.Position = UDim2.new(0, 5, 0.5, -20)
 catIcon.BackgroundTransparency = 1
-catIcon.Image = "rbxassetid://7733960981" -- 可以使用一个猫图标
+catIcon.Image = "rbxassetid://7733960981" -- LLL
 catIcon.Parent = vipFrame
 
 -- 你看你妈呢
