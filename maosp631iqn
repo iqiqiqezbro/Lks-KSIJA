@@ -7,7 +7,7 @@ print("猫帝帮你开启了反挂机")
 		end)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- 创建主窗口
+
 local Window = Rayfield:CreateWindow({
     Name = "猫帝 脚本",
     LoadingTitle = "加载中...",
@@ -17,7 +17,7 @@ local Window = Rayfield:CreateWindow({
     },
 })
 
--- 创建标签页
+
 local Tab1 = Window:CreateTab("关于")
 local Tab2 = Window:CreateTab("通用")
 local Tab3 = Window:CreateTab("ohio")
@@ -25,8 +25,9 @@ local Tab4 = Window:CreateTab("娱乐")
 local Tab5 = Window:CreateTab("doors")
 local Tab6 = Window:CreateTab("墨水游戏")
 local Tab7 = Window:CreateTab("范围")
+local Tab8 = Window:CreateTab("忍者传奇")
 
--- 1. 切换开关(Toggle)示例
+
 local ToggleExample = Tab1:CreateToggle({
     Name = "此脚本为缝合脚本完全免费倒卖的死全家",
     CurrentValue = false,
@@ -85,7 +86,7 @@ local ButtonExample = Tab2:CreateButton({
 })
 
 
--- 6. 按钮(Button)示例
+
 local ButtonExample = Tab2:CreateButton({
     Name = "动作",
     Callback = function()
@@ -364,5 +365,20 @@ local ButtonExample = Tab7:CreateButton({
     Callback = function()
         print("按钮被点击了!")
         loadstring(game:HttpGet("https://pastebin.com/raw/KKY9EpZU"))()
+    end,
+})
+
+
+local ButtonExample = Tab7:CreateButton({
+    Name = "自动挥剑",
+    Callback = function()
+        print("按钮被点击了!")
+        while true do
+local args = {
+	"swingKatana"
+}
+game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
+wait(0.1)
+end
     end,
 })
