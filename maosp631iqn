@@ -342,7 +342,7 @@ local ButtonExample = Tab6:CreateButton({
 })
 
 
-local ButtonExample = Tab2:CreateButton({
+local ButtonExample = Tab6:CreateButton({
     Name = "猫帝inkgame",
     Callback = function()
         print("按钮被点击了!")
