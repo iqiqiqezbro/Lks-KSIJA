@@ -387,5 +387,6 @@ local args = {
 }
 game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
 wait(0.1)
+end
     end,
 })
