@@ -342,6 +342,15 @@ local ButtonExample = Tab6:CreateButton({
 })
 
 
+local ButtonExample = Tab2:CreateButton({
+    Name = "猫帝inkgame",
+    Callback = function()
+        print("按钮被点击了!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/iqiqiqezbro/-/30522610c297b2db7a14dc32e28d1fe9801f32f3/114514"))()
+    end,
+})
+
+
 local ButtonExample = Tab7:CreateButton({
     Name = "低级",
     Callback = function()
@@ -369,7 +378,7 @@ local ButtonExample = Tab7:CreateButton({
 })
 
 
-local ButtonExample = Tab8:CreateButton({
+local ButtonExample = Tab7:CreateButton({
     Name = "自动挥剑",
     Callback = function()
         print("按钮被点击了!")
@@ -379,6 +388,5 @@ local args = {
 }
 game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
 wait(0.1)
-end
     end,
 })
