@@ -377,7 +377,7 @@ local ButtonExample = Tab7:CreateButton({
 })
 
 
-local ButtonExample = Tab7:CreateButton({
+local ButtonExample = Tab8:CreateButton({
     Name = "自动挥剑",
     Callback = function()
         print("按钮被点击了!")
